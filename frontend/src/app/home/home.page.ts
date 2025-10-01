@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  brand: string = 'EA';
+  model: string = 'fifa25';
+
   constructor() {}
 
 }
