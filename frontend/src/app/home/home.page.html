@@ -1,22 +1,28 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      GameVault
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div>
-    <h1 class="brand">Brand: {{brand}}</h1>
-    <p>Welcome to your new app. This starter project is ready to run!</p>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="hero-section">
+    <h1>Welcome to GameVault</h1>
+    <p>Your ultimate gaming library</p>
+    <ion-button expand="block" (click)="gotovideogames()" color="secondary">
+      <ion-icon name="game-controller" slot="start"></ion-icon>
+      Explore Games
+    </ion-button>
   </div>
 
-  <ion-button expand="block" (click)="gotovideogames()">show videogames</ion-button>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Featured Publisher</ion-card-subtitle>
+      <ion-card-title class="brand">{{brand}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Check out the latest releases from {{brand}}, including {{model}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

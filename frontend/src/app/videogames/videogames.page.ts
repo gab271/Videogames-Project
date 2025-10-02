@@ -34,4 +34,17 @@ export class VideogamesPage implements OnInit {
       error: (e) => console.error(e)
     });
   }
+
+  // Añadir estos dos nuevos métodos
+  editVideogame(id: number) {
+    // Por ahora solo mostraremos un console.log
+    console.log('Editar videojuego con id:', id);
+    // Aquí irá la lógica para editar el videojuego
+  }
+
+  addNewGame() {
+    // Por ahora solo mostraremos un console.log
+    console.log('Añadir nuevo videojuego');
+    // Aquí irá la lógica para añadir un nuevo videojuego
+  }
 }

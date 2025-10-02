@@ -21,4 +21,8 @@ export class VideogamesService {
   update(id: number, data: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/${id}`, data);
   }
+
+  create(data: any): Observable<any> {
+    return this.http.post(this.baseUrl, data);
+  }
 }
