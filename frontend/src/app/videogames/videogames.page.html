@@ -11,6 +11,9 @@
         <h2>{{ videogame.title }}</h2>
         <p>{{ videogame.genre }}</p>
       </ion-label>
+      <ion-button slot="end" color="danger" (click)="deleteVideogame(videogame.id)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

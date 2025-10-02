@@ -24,4 +24,14 @@ export class VideogamesPage implements OnInit {
       error: (e) => console.error(e)
     });
   }
+
+  deleteVideogame(id: number) {
+    this.videogameService.delete(id).subscribe({
+      next: () => {
+        // Actualizar la lista después de borrar
+        this.videogames = this.videogames.filter(videogame => videogame.id !== id);
+      },
+      error: (e) => console.error(e)
+    });
+  }
 }

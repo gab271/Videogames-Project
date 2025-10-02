@@ -6,11 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VideogamesService {
-  private baseUrl = 'http://localhost:8080/api/videogames'; // Añadido /api
+  private baseUrl = 'http://localhost:8080/api/videogames';
 
   constructor(private http: HttpClient) { }
 
   getAllVideogames(): Observable<any> {
     return this.http.get(this.baseUrl);
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
+
+  update(id: number, data: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${id}`, data);
   }
 }
