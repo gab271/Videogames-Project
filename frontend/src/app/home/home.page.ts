@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,10 @@ export class HomePage {
   brand: string = 'EA';
   model: string = 'fifa25';
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  gotovideogames() {
+    this.router.navigate(['/videogames']);
+  }
 
 }

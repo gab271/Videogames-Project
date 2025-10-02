@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>videogames</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let videogame of videogames">
+      <ion-label>
+        <h2>{{ videogame.title }}</h2>
+        <p>{{ videogame.genre }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
