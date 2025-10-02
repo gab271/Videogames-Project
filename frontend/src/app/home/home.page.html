@@ -1,28 +1,61 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
-      GameVault
+      <ion-icon name="game-controller"></ion-icon> GameVault
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
+<ion-content [fullscreen]="true">
   <div class="hero-section">
     <h1>Welcome to GameVault</h1>
-    <p>Your ultimate gaming library</p>
-    <ion-button expand="block" (click)="gotovideogames()" color="secondary">
+    <p>Your Ultimate Gaming Collection</p>
+    <ion-button expand="block" (click)="gotovideogames()" color="secondary" class="explore-button">
       <ion-icon name="game-controller" slot="start"></ion-icon>
       Explore Games
     </ion-button>
   </div>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Featured Publisher</ion-card-subtitle>
-      <ion-card-title class="brand">{{brand}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Check out the latest releases from {{brand}}, including {{model}}
-    </ion-card-content>
-  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-card class="featured-card">
+          <ion-card-header>
+            <ion-card-subtitle>Featured Publisher</ion-card-subtitle>
+            <ion-card-title>{{brand}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Check out the latest releases from {{brand}}, including {{model}}</p>
+            <ion-chip color="tertiary">
+              <ion-icon name="star"></ion-icon>
+              <ion-label>Featured</ion-label>
+            </ion-chip>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+      <ion-col size="12" size-md="6">
+        <ion-card class="stats-card">
+          <ion-card-header>
+            <ion-card-subtitle>Collection Stats</ion-card-subtitle>
+            <ion-card-title>Your Library</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item>
+                <ion-icon name="trophy" slot="start" color="warning"></ion-icon>
+                <ion-label>Total Games</ion-label>
+                <ion-badge slot="end" color="primary">25</ion-badge>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="star" slot="start" color="warning"></ion-icon>
+                <ion-label>Average Rating</ion-label>
+                <ion-badge slot="end" color="secondary">4.5</ion-badge>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
