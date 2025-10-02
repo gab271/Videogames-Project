@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { VideogamesPageRoutingModule } from './videogames-routing.module';
-
 import { VideogamesPage } from './videogames.page';
+import { VideogamesPageRoutingModule } from './videogames-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { VideogamesService } from '../services/videogames.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
-    VideogamesPageRoutingModule
+    VideogamesPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [VideogamesPage]
+  declarations: [VideogamesPage],
+  providers: [VideogamesService]
 })
-export class VideogamesPageModule {}
+export class VideogamesPageModule { }

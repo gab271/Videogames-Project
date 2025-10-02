@@ -35,11 +35,14 @@ exports.create = (req, res) => {
 
 // Retrieve all Videogames from the database
 exports.findAll = (req, res) => {
-  Videogame.findAll() // Changed videogame to Videogame
+  console.log("GET /api/videogames called");
+  Videogame.findAll()
     .then(data => {
+      console.log("Data found:", data);
       res.send(data);
     })
     .catch(err => {
+      console.error("Error:", err);
       res.status(500).send({
         message: err.message || "Some error occurred while retrieving videogames."
       });
