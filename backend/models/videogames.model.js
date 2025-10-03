@@ -11,9 +11,6 @@ module.exports = (sequelize, Sequalize) => {
     },
     rating: {
       type: Sequalize.FLOAT
-    },
-    image: {
-      type: Sequalize.STRING
     }
   });
   return Videogame;
