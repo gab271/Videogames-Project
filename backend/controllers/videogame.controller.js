@@ -2,7 +2,6 @@ const db = require("../models");
 const Videogame = db.videogames;
 const Op = db.Sequalize.Op;
 
-// Create and Save a new Videogame
 exports.create = (req, res) => {
     if (!req.body.title) {
         res.status(400).send({
@@ -25,12 +24,11 @@ exports.create = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Error creating videogame."
+                message: err.message || "Error creating the videogame."
             });
         });
 };
 
-// Retrieve all Videogames from the database
 exports.findAll = (req, res) => {
   console.log("GET /api/videogames called");
   Videogame.findAll()
@@ -41,26 +39,23 @@ exports.findAll = (req, res) => {
     .catch(err => {
       console.error("Error:", err);
       res.status(500).send({
-        message: err.message || "Some error occurred while retrieving videogames."
+        message: err.message || "Some error creating some videogames."
       });
     });
 };
 
-// Find a single Videogame with an id
 exports.findOne = (req, res) => {
    
   const id = req.params.id;
   Videogame.findByPk(id)
 };
 
-// Update a Videogame by the id in the request
 exports.update = (req, res) => {
     const id = req.params.id;
 
-    // Validar el request
     if (!req.body.title) {
         res.status(400).send({
-            message: "Content cannot be empty!"
+            message: "Content cannot be empty"
         });
         return;
     }
@@ -79,22 +74,21 @@ exports.update = (req, res) => {
     .then(num => {
         if (num == 1) {
             res.send({
-                message: "Videogame was updated successfully."
+                message: "Videogame was updated correctly."
             });
         } else {
             res.send({
-                message: `Cannot update Videogame with id=${id}. Maybe Videogame was not found or req.body is empty!`
+                message: `Cannot update Videogame with id=${id}. `
             });
         }
     })
     .catch(err => {
         res.status(500).send({
-            message: "Error updating Videogame with id=" + id
+            message: "Error updating the Videogame with id=" + id
         });
     });
 };
 
-// Delete a Videogame with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
 
@@ -103,14 +97,14 @@ exports.delete = (req, res) => {
     })
     .then(num => {
         if (num == 1) {
-            res.send({ message: "Videogame deleted successfully!" });
+            res.send({ message: "Videogame deleted correctly" });
         } else {
-            res.send({ message: "Cannot delete videogame. Maybe it was not found!" });
+            res.send({ message: "Cannot delete videogame. Maybe it was not found" });
         }
     })
     .catch(err => {
         res.status(500).send({
-            message: "Could not delete videogame with id=" + id
+            message: "Cant delete videogame with id=" + id
         });
     });
 };

@@ -32,7 +32,6 @@ export class VideogamesPage implements OnInit {
   deleteVideogame(id: number) {
     this.videogameService.delete(id).subscribe({
       next: () => {
-        // Actualizar la lista después de borrar
         this.videogames = this.videogames.filter(videogame => videogame.id !== id);
       },
       error: (e) => console.error(e)
@@ -40,7 +39,6 @@ export class VideogamesPage implements OnInit {
   }
 
   async editVideogame(id: number) {
-    // Primero obtener el videojuego actual
     const videogame = this.videogames.find(v => v.id === id);
     
     const alert = await this.alertController.create({

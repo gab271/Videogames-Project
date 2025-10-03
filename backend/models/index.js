@@ -17,10 +17,6 @@ const db = {};
 
 db.Sequalize = Sequalize;
 db.sequelize = sequelize;
-db.videogames = require("./videogames.model")(sequelize, Sequalize); // Fixed file name
-
-// Comment out or remove these lines until you create the models
-// db.genres = require("./genre.model")(sequelize, Sequalize);
-// db.platforms = require("./platform.model")(sequelize, Sequalize);
+db.videogames = require("./videogames.model")(sequelize, Sequalize); 
 
 module.exports = db;

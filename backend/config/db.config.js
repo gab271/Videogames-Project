@@ -1,7 +1,7 @@
 module.exports = {
   HOST: "localhost",
-  USER: "root",  // Change from 'gab' to your MySQL username
-  PASSWORD: "1234",  // Your MySQL password
+  USER: "root",  
+  PASSWORD: "1234", 
   DB: "videogames",
   dialect: "mysql",
   pool: {
